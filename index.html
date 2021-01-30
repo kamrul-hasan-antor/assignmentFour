@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <!--Header and Menu Section-->
+    <!---------- Header and Menu Section -------->
     <header class="container">
         <nav>
             <ul>
@@ -29,26 +29,27 @@
         </nav>
     </header>
 
-    <!--Booking Section-->
-    <main class="main-content container">
+    <!----------- Booking Section -------->
+    <main id="booking-area" class="main-content container">
 
         <div class="booking-content">
             <h1>Cruise Queen</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book./p>
+            <p>Ready to start planning your next dream cruise vacation? Explore more while spending less with deals on
+                some of our bestselling cruises. No vacation’s as big or as bold as a Cruise Queen. Each award-winning
+                cruise ship in our fleet offers world class dining, dazzling entertainment, and plenty of
+                family-friendly thrills to dive into between cruising adventures.</p>
         </div>
 
 
         <div class="booking-form">
-            <h3>Book Ocean Time</h3>
+            <h3 class="text-center">Book Ocean Time</h3>
             <div class="input-group">
-                <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
+                <label for="">Departure</label>
+                <input class="inp-style" type="text" name="" placeholder="Miami, Florida">
             </div>
             <div class="input-group">
-                <label for="">Flying To</label>
-                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+                <label for="">Destination</label>
+                <input class="inp-style" type="text" name="" placeholder="Seattle, Washington">
             </div>
             <div class="inputs">
                 <div class="input-group">
@@ -116,13 +117,18 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button onclick="confirmation()" class="btn-style">Book Now</button>
         </div>
     </main>
+    <div id="confirm-area">
+        <div class="confirm-message">
+            <h2 class="text-center">Congratulations</h2>
+            <h4 class="text-center">You have successfully booked your tickets.</h4>
+        </div>
+    </div>
 
-    <!-- JavaScript part is given below -->
+    <!----------- JavaScript part is given below ---------->
     <script>
-
 
         // .......First Class Tickets Function starts here.......
         function firstClassTicket(ticketIncrease) {
@@ -135,10 +141,10 @@
             if (ticketIncrease == false && firstClassCount > 0) {
                 firstClassNumber = firstClassCount - 1;
             }
+
             document.getElementById("firstClassCount").value = firstClassNumber;
             subTotal();
         }
-
 
         // .......Economy Class Tickets Function starts here.......
         function economyClassTicket(ticketIncrease) {
@@ -165,13 +171,21 @@
             const economyClassAmount = parseInt(economyClass.value);
 
             const ticketPrice = firstClassAmount * 150 + economyClassAmount * 100;
-            document.getElementById("subtotal").innerText = '$' + ticketPrice;
+            document.getElementById("subtotal").innerText = ticketPrice;
 
             const tax = ticketPrice * 0.1;
-            document.getElementById("tax").innerText = '$' + tax;
+            document.getElementById("tax").innerText = tax;
 
             const total = ticketPrice + tax;
-            document.getElementById("total").innerText = '$' + total;
+            document.getElementById("total").innerText = total;
+        }
+
+        //........Confirmation message Function starts here........
+        function confirmation() {
+            const bookingArea = document.getElementById("booking-area");
+            bookingArea.style.display = "none";
+            const confirmArea = document.getElementById("confirm-area");
+            confirmArea.style.display = "block";
         }
     </script>
 </body>
