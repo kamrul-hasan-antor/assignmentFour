@@ -4,6 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style-type: none;
+    
 }
 body{
     font-family: 'Roboto', sans-serif;
@@ -14,12 +15,12 @@ body{
     background-size: cover;
 }
 nav{
+    
     height: 50px;
     width: 100%;
     padding: 20px 0;
 }
 .container{
-    
     width: 1200px;
     max-width: 85%;
     margin: 0 auto;
@@ -31,7 +32,6 @@ nav ul{
     
 }
 nav ul li a{
-    
     color: #fff;
     padding: 10px;
     text-transform: uppercase;
@@ -41,6 +41,7 @@ nav ul li a{
 nav ul li a:hover, a.active{
     background-color: #E33741;
     border-radius: 5px;
+    
 }
 .main-content{
     display: grid;
@@ -61,7 +62,7 @@ nav ul li a:hover, a.active{
     font-weight: 500;
 }
 .booking-form{
-    background-color: rgba(255, 255, 255, 0.767);
+    background-color: rgba(255, 255, 255, 0.842);
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 5px;
@@ -98,7 +99,7 @@ nav ul li a:hover, a.active{
     align-items: center;
 }
 .inp-width{
-    min-width: 250px;
+    min-width: 280px;
 }
 .plus-minus-btn{
     color: #3352F2;
@@ -126,4 +127,3 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
-
